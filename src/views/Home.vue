@@ -24,3 +24,9 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+.content{
+  margin-left: 200px;
+}
+  
+</style>

@@ -1,11 +1,7 @@
 <template>
   <div>
       <ul>
-          <li><a href="/create">create</a></li>
-          <li><a href="/delete">delete</a></li>
-          <li><a href="/list">list</a></li>
-          <li><a href="/replace">replace</a></li>
-          <li><a href="/update">update</a></li>
+          <li class="menuBtn"><a href="/list">북마크 리스트</a></li>
       </ul>
   </div>
 </template>
@@ -15,3 +11,17 @@ export default {
   name: 'Content'
 }
 </script>
+<style lang="scss">
+.menuBtn{
+  a{
+    margin: 20px;
+    padding: 20px;
+    background: rgb(7, 5, 139);
+    color:white;
+    display: block;
+    font-size: 16px;
+    text-align: center;
+  }
+}
+  
+</style>
