@@ -11,7 +11,18 @@
     </div>
     <ul>
       <li v-for="(BM,index) in BookMark" v-bind:key="BM">
-        <p>[{{index+1}}] {{BM.name}} : <a v-bind:href="BM.adress" target="_blank">{{BM.adress}}</a> <button v-on:click="replaceBookMark(index,reName,reSite)">수정</button> <button v-on:click="deleteBookMark(index)">삭제</button></p>
+        <p>
+          [{{index+1}}]
+          <strong v-if="!isShow">
+            <span>{{BM.name}}</span>
+            <button v-on:click="replaceBookMark(index,reName,reSite)">수정</button>
+          </strong>
+          <span v-else><input type="text" value="수정할내용"></span>
+          : 
+          <a v-bind:href="BM.adress" target="_blank">{{BM.adress}}</a> 
+          <!-- <button v-on:click="replaceBookMark(index,reName,reSite)">수정</button> -->
+          <button v-on:click="deleteBookMark(index)">삭제</button>
+          </p>
       </li>
     </ul>
   </div>
@@ -23,11 +34,12 @@ export default {
   data () {
     return {
       BookMark: [
-       {
-         name : "삼치쿤 공식 홈페이지",
-         adress : "http://www.naver.com" 
-       }
-      ]
+        {
+          name : "삼치쿤 공식 홈페이지",
+          adress : "http://www.naver.com" 
+        }
+      ],
+      isShow : false
     }
   },
   methods:{
